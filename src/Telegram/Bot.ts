@@ -44,5 +44,12 @@ export class Bot {
         }).then(() => true)
             .catch(() => false);
     }
+
+    async setWebhook(url:string):Promise<boolean>{
+        return await axiosProxy.post(this.api('setWebhook'), {
+            url
+        }).then(() => true)
+            .catch(() => false);
+    }
 }
 
